@@ -66,3 +66,15 @@ extension PopulerViewController {
     }
     
 }
+
+//MARK: - UIScrollViewDelegate
+extension PopulerViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
+            if !viewModel.isLoading {
+                // Load more data
+                viewModel.fetchMovies()
+            }
+        }
+    }
+}

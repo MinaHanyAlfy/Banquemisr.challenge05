@@ -11,6 +11,8 @@ protocol PopulerViewModelProtocol {
     var dataSource: [Movie] {get set}
     var errorPublisher: Published<ErrorMessage?>.Publisher {get}
     var moviesPublisher: Published<Bool?>.Publisher {get}
+    var isLoading: Bool {get set}
+
     func viewDidLoad()
     func viewDidAppear()
     
@@ -27,7 +29,8 @@ class PopulerViewModel: PopulerViewModelProtocol {
     
     var dataSource: [Movie] = []
     private var populerUseCase: GetPopulerMoviesUseCaseProtocol?
-    
+    var isLoading: Bool = false
+
     
     init(useCase: GetPopulerMoviesUseCaseProtocol? = GetPopulerMoviesUseCase()) {
         self.populerUseCase = useCase
@@ -42,14 +45,22 @@ class PopulerViewModel: PopulerViewModelProtocol {
     }
     
     func fetchMovies() {
+        isLoading = true
         populerUseCase?.execute(completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let movieList):
                 self.isMovieFetched = true
-                self.dataSource = movieList ?? []
+                if self.dataSource.count == 0 {
+                    self.dataSource = movieList ?? []
+                } else {
+                    self.dataSource.append(contentsOf: movieList ?? [])
+                }
+                self.isLoading = false
+
             case .failure(let error):
                 print(error)
+                self.isLoading = false
                 self.isMovieFetched = true
             }
         })

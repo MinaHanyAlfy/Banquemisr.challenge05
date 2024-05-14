@@ -67,3 +67,8 @@ extension BaseViewController: UITableViewDelegate {
         print("Movie index:", indexPath.row)
     }
 }
+
+//MARK: - UIScrollViewDelegate
+extension BaseViewController: UIScrollViewDelegate {
+    
+}
