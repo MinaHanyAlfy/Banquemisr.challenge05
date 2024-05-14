@@ -16,6 +16,9 @@
 		7F6823252BF3939B00CA4AC8 /* challenge05Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823242BF3939B00CA4AC8 /* challenge05Tests.swift */; };
 		7F68232F2BF3939C00CA4AC8 /* challenge05UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68232E2BF3939C00CA4AC8 /* challenge05UITests.swift */; };
 		7F6823312BF3939C00CA4AC8 /* challenge05UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823302BF3939C00CA4AC8 /* challenge05UITestsLaunchTests.swift */; };
+		7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823462BF3975200CA4AC8 /* EndPoint.swift */; };
+		7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823482BF3978200CA4AC8 /* RequestManager.swift */; };
+		7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68234A2BF397A000CA4AC8 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		7F68232A2BF3939C00CA4AC8 /* challenge05UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challenge05UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F68232E2BF3939C00CA4AC8 /* challenge05UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge05UITests.swift; sourceTree = "<group>"; };
 		7F6823302BF3939C00CA4AC8 /* challenge05UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge05UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F6823462BF3975200CA4AC8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		7F6823482BF3978200CA4AC8 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		7F68234A2BF397A000CA4AC8 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		7F6823402BF395A200CA4AC8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7F6823442BF3972200CA4AC8 /* Common */,
 				7F6823432BF3963700CA4AC8 /* Presentation */,
 				7F6823422BF3963200CA4AC8 /* Data */,
 				7F6823412BF3962D00CA4AC8 /* Domain */,
@@ -173,6 +180,24 @@
 			children = (
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7F6823442BF3972200CA4AC8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823452BF3974600CA4AC8 /* NetworkManager */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7F6823452BF3974600CA4AC8 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823462BF3975200CA4AC8 /* EndPoint.swift */,
+				7F6823482BF3978200CA4AC8 /* RequestManager.swift */,
+				7F68234A2BF397A000CA4AC8 /* ErrorMessage.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,8 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */,
 				7F6823152BF3939900CA4AC8 /* challenge05.xcdatamodeld in Sources */,
 				7F68230B2BF3939900CA4AC8 /* AppDelegate.swift in Sources */,
+				7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */,
+				7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */,
 				7F68230D2BF3939900CA4AC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
