@@ -39,6 +39,7 @@
 		7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */; };
 		7F68237E2BF3B73800CA4AC8 /* ZeroStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */; };
 		7F6823802BF3B8AE00CA4AC8 /* ComingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237F2BF3B8AE00CA4AC8 /* ComingViewModel.swift */; };
+		7F6823822BF3B9E900CA4AC8 /* PlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823812BF3B9E900CA4AC8 /* PlayingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewModel.swift; sourceTree = "<group>"; };
 		7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateView.swift; sourceTree = "<group>"; };
 		7F68237F2BF3B8AE00CA4AC8 /* ComingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewModel.swift; sourceTree = "<group>"; };
+		7F6823812BF3B9E900CA4AC8 /* PlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				7F6823722BF3B19200CA4AC8 /* PlayingViewController.swift */,
+				7F6823812BF3B9E900CA4AC8 /* PlayingViewModel.swift */,
 			);
 			path = NowPlayingVc;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				7F6823762BF3B1A600CA4AC8 /* ComingViewController.swift in Sources */,
 				7F6823602BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift in Sources */,
 				7F6823642BF3AF4200CA4AC8 /* BaseViewController.swift in Sources */,
+				7F6823822BF3B9E900CA4AC8 /* PlayingViewModel.swift in Sources */,
 				7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */,
 				7F6823702BF3B09100CA4AC8 /* UIImageView+Extension.swift in Sources */,
 				7F68230D2BF3939900CA4AC8 /* SceneDelegate.swift in Sources */,
