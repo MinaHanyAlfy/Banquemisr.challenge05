@@ -96,4 +96,7 @@ extension CoreDataManager {
             return false
         }
     }
+    
+    //TODO: Make a func to check for each movie type - Upcoming, Populer And Now Playing
+    
 }
