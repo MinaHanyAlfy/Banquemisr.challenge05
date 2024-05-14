@@ -24,6 +24,10 @@
 		7F6823532BF399EE00CA4AC8 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823522BF399EE00CA4AC8 /* MovieDetails.swift */; };
 		7F6823552BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823542BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift */; };
 		7F6823572BF39AEF00CA4AC8 /* MoviesRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823562BF39AEF00CA4AC8 /* MoviesRepositoryImp.swift */; };
+		7F68235C2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68235B2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift */; };
+		7F68235E2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68235D2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift */; };
+		7F6823602BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68235F2BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift */; };
+		7F6823622BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823612BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		7F6823522BF399EE00CA4AC8 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		7F6823542BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		7F6823562BF39AEF00CA4AC8 /* MoviesRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryImp.swift; sourceTree = "<group>"; };
+		7F68235B2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayingMoviesUseCase.swift; sourceTree = "<group>"; };
+		7F68235D2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComingMoviesUseCase.swift; sourceTree = "<group>"; };
+		7F68235F2BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPopulerMoviesUseCase.swift; sourceTree = "<group>"; };
+		7F6823612BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,7 @@
 		7F6823412BF3962D00CA4AC8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7F6823582BF39D5500CA4AC8 /* UseCases */,
 				7F68234F2BF399CA00CA4AC8 /* Entities */,
 				7F68234E2BF3999100CA4AC8 /* Repos */,
 			);
@@ -229,6 +238,17 @@
 				7F6823522BF399EE00CA4AC8 /* MovieDetails.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		7F6823582BF39D5500CA4AC8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				7F68235B2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift */,
+				7F68235D2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift */,
+				7F68235F2BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift */,
+				7F6823612BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,15 +382,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F68235E2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift in Sources */,
+				7F6823622BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift in Sources */,
 				7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */,
 				7F68234D2BF3989E00CA4AC8 /* MoviesRouter.swift in Sources */,
 				7F6823152BF3939900CA4AC8 /* challenge05.xcdatamodeld in Sources */,
 				7F68230B2BF3939900CA4AC8 /* AppDelegate.swift in Sources */,
+				7F68235C2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift in Sources */,
 				7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */,
 				7F6823572BF39AEF00CA4AC8 /* MoviesRepositoryImp.swift in Sources */,
 				7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */,
 				7F6823552BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift in Sources */,
 				7F6823512BF399DE00CA4AC8 /* Movie.swift in Sources */,
+				7F6823602BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift in Sources */,
 				7F68230D2BF3939900CA4AC8 /* SceneDelegate.swift in Sources */,
 				7F6823532BF399EE00CA4AC8 /* MovieDetails.swift in Sources */,
 			);
