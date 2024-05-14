@@ -16,6 +16,7 @@ class PopulerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Populer"
+        startLoading()
         viewModel = PopulerViewModel()
         viewModel.viewDidLoad()
         bindData()
@@ -51,6 +52,7 @@ extension PopulerViewController {
             .sink(receiveValue: { [weak self] error in
                 if let error = error {
                     print("Error", error)
+                    self?.stopLoading()
                 }
             })
             .store(in: &cancellabels)
@@ -59,7 +61,8 @@ extension PopulerViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] fetched in
                 if fetched ?? false {
-                        self?.tableView.reloadData()
+                    self?.stopLoading()
+                    self?.tableView.reloadData()
                 }
             })
             .store(in: &cancellabels)
@@ -73,6 +76,7 @@ extension PopulerViewController {
         if scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
             if !viewModel.isLoading {
                 // Load more data
+                startLoading()
                 viewModel.fetchMovies()
             }
         }

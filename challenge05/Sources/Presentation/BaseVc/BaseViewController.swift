@@ -18,6 +18,12 @@ class BaseViewController: UIViewController {
         return tableView
     }()
     
+    lazy var activityIndicatorView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +31,7 @@ class BaseViewController: UIViewController {
         
         setupTableView()
         setupNavigation()
+        setupLoadingIndicatorView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,7 +55,29 @@ class BaseViewController: UIViewController {
         
     }
     
-   
+    private func setupLoadingIndicatorView() {
+        view.addSubview(activityIndicatorView)
+        
+        // Center the activity indicator in the view
+        NSLayoutConstraint.activate([
+            activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    /// Function to start animating the activity indicator
+    internal func startLoading() {
+        activityIndicatorView.startAnimating()
+        /// For disable user interaction while loading
+        view.isUserInteractionEnabled = false
+    }
+    
+    /// Function to stop animating the activity indicator
+    internal func stopLoading() {
+        activityIndicatorView.stopAnimating()
+        /// For re-enable user interaction when loading is complete
+        view.isUserInteractionEnabled = true
+    }
 }
 
 //MARK: - UITableViewDataSource
