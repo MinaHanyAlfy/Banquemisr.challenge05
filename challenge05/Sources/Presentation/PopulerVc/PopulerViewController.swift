@@ -44,6 +44,15 @@ extension PopulerViewController {
     }
 }
 
+//MARK: - UITableViewDelegate
+extension PopulerViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = viewModel.getMovie(index: indexPath.row)
+        let vc = MovieDetailsViewController.ViewController(movieId: movie.id ?? 0)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 //MARK: - Data Binding
 extension PopulerViewController {
     private func bindData() {
