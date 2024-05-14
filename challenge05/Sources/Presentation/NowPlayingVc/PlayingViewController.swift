@@ -44,6 +44,15 @@ extension PlayingViewController {
     }
 }
 
+//MARK: - UITableViewDelegate
+extension PlayingViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = viewModel.getMovie(index: indexPath.row)
+        let vc = MovieDetailsViewController.ViewController(movieId: movie.id ?? 0)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 //MARK: - Data Binding
 extension PlayingViewController {
     private func bindData() {
