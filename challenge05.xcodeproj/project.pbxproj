@@ -37,6 +37,7 @@
 		7F6823762BF3B1A600CA4AC8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823752BF3B1A600CA4AC8 /* ComingViewController.swift */; };
 		7F6823792BF3B1B900CA4AC8 /* PopulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */; };
 		7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */; };
+		7F68237E2BF3B73800CA4AC8 /* ZeroStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		7F6823752BF3B1A600CA4AC8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
 		7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewController.swift; sourceTree = "<group>"; };
 		7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewModel.swift; sourceTree = "<group>"; };
+		7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,11 +221,10 @@
 		7F6823432BF3963700CA4AC8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7F68237C2BF3B72600CA4AC8 /* Common */,
 				7F6823772BF3B1AB00CA4AC8 /* PopulerVc */,
 				7F6823742BF3B19700CA4AC8 /* UpcomingVc */,
 				7F6823712BF3B17600CA4AC8 /* NowPlayingVc */,
-				7F6823662BF3AFA400CA4AC8 /* MovieTableViewCell */,
-				7F6823652BF3AF9600CA4AC8 /* BaseVc */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -324,6 +325,16 @@
 				7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */,
 			);
 			path = PopulerVc;
+			sourceTree = "<group>";
+		};
+		7F68237C2BF3B72600CA4AC8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823662BF3AFA400CA4AC8 /* MovieTableViewCell */,
+				7F6823652BF3AF9600CA4AC8 /* BaseVc */,
+				7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +471,7 @@
 			files = (
 				7F6823692BF3AFC400CA4AC8 /* MovieTableViewCell.swift in Sources */,
 				7F68235E2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift in Sources */,
+				7F68237E2BF3B73800CA4AC8 /* ZeroStateView.swift in Sources */,
 				7F6823622BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift in Sources */,
 				7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */,
 				7F68234D2BF3989E00CA4AC8 /* MoviesRouter.swift in Sources */,

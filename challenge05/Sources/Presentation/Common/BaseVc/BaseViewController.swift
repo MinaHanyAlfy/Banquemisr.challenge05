@@ -24,6 +24,8 @@ class BaseViewController: UIViewController {
         return indicator
     }()
     
+    lazy var emptyStateView = ZeroStateView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,7 @@ class BaseViewController: UIViewController {
         setupTableView()
         setupNavigation()
         setupLoadingIndicatorView()
+        setupEmptyStateView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,6 +80,26 @@ class BaseViewController: UIViewController {
         activityIndicatorView.stopAnimating()
         /// For re-enable user interaction when loading is complete
         view.isUserInteractionEnabled = true
+    }
+    /// For Empty view if there's nothing to show 
+    private func setupEmptyStateView() {
+        emptyStateView.message = "There's no movies right now, Check connection and reopen app."
+        tableView.addSubview(emptyStateView)
+        emptyStateView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            emptyStateView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor),
+            emptyStateView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
+            emptyStateView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+            emptyStateView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor)
+        ])
+        
+        updateEmptyStateView()
+    }
+    
+    internal func updateEmptyStateView() {
+        let isEmpty = tableView.visibleCells.isEmpty
+        emptyStateView.isHidden = !isEmpty
+        tableView.separatorStyle = isEmpty ? .none : .singleLine
     }
 }
 

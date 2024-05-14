@@ -63,6 +63,7 @@ extension PopulerViewController {
                 if fetched ?? false {
                     self?.stopLoading()
                     self?.tableView.reloadData()
+                    self?.updateEmptyStateView()
                 }
             })
             .store(in: &cancellabels)
