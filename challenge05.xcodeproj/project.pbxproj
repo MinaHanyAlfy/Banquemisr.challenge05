@@ -38,6 +38,7 @@
 		7F6823792BF3B1B900CA4AC8 /* PopulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */; };
 		7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */; };
 		7F68237E2BF3B73800CA4AC8 /* ZeroStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */; };
+		7F6823802BF3B8AE00CA4AC8 /* ComingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237F2BF3B8AE00CA4AC8 /* ComingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewController.swift; sourceTree = "<group>"; };
 		7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewModel.swift; sourceTree = "<group>"; };
 		7F68237D2BF3B73800CA4AC8 /* ZeroStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateView.swift; sourceTree = "<group>"; };
+		7F68237F2BF3B8AE00CA4AC8 /* ComingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				7F6823752BF3B1A600CA4AC8 /* ComingViewController.swift */,
+				7F68237F2BF3B8AE00CA4AC8 /* ComingViewModel.swift */,
 			);
 			path = UpcomingVc;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */,
 				7F68236E2BF3B07500CA4AC8 /* UITableView+Extension.swift in Sources */,
 				7F6823552BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift in Sources */,
+				7F6823802BF3B8AE00CA4AC8 /* ComingViewModel.swift in Sources */,
 				7F6823732BF3B19200CA4AC8 /* PlayingViewController.swift in Sources */,
 				7F6823512BF399DE00CA4AC8 /* Movie.swift in Sources */,
 				7F6823762BF3B1A600CA4AC8 /* ComingViewController.swift in Sources */,

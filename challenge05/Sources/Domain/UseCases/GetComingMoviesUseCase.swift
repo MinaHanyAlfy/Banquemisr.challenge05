@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol GetcomingMoviesUseCaseProtocol {
+protocol GetComingMoviesUseCaseProtocol {
     func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?)
 }
 
-class GetcomingMoviesUseCase: GetcomingMoviesUseCaseProtocol {
+class GetComingMoviesUseCase: GetComingMoviesUseCaseProtocol {
     private var cancellabels = Set<AnyCancellable>()
     var repo: MoviesRepositoryProtocol?
     
