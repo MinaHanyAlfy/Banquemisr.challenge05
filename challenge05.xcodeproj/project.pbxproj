@@ -28,6 +28,9 @@
 		7F68235E2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68235D2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift */; };
 		7F6823602BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68235F2BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift */; };
 		7F6823622BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823612BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift */; };
+		7F6823642BF3AF4200CA4AC8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823632BF3AF4200CA4AC8 /* BaseViewController.swift */; };
+		7F6823692BF3AFC400CA4AC8 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823672BF3AFC400CA4AC8 /* MovieTableViewCell.swift */; };
+		7F68236A2BF3AFC400CA4AC8 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6823682BF3AFC400CA4AC8 /* MovieTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		7F68235D2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComingMoviesUseCase.swift; sourceTree = "<group>"; };
 		7F68235F2BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPopulerMoviesUseCase.swift; sourceTree = "<group>"; };
 		7F6823612BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsUseCase.swift; sourceTree = "<group>"; };
+		7F6823632BF3AF4200CA4AC8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7F6823672BF3AFC400CA4AC8 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		7F6823682BF3AFC400CA4AC8 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +207,8 @@
 		7F6823432BF3963700CA4AC8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7F6823662BF3AFA400CA4AC8 /* MovieTableViewCell */,
+				7F6823652BF3AF9600CA4AC8 /* BaseVc */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -249,6 +257,23 @@
 				7F6823612BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		7F6823652BF3AF9600CA4AC8 /* BaseVc */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823632BF3AF4200CA4AC8 /* BaseViewController.swift */,
+			);
+			path = BaseVc;
+			sourceTree = "<group>";
+		};
+		7F6823662BF3AFA400CA4AC8 /* MovieTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823672BF3AFC400CA4AC8 /* MovieTableViewCell.swift */,
+				7F6823682BF3AFC400CA4AC8 /* MovieTableViewCell.xib */,
+			);
+			path = MovieTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +382,7 @@
 			files = (
 				7F68231A2BF3939B00CA4AC8 /* LaunchScreen.storyboard in Resources */,
 				7F6823172BF3939B00CA4AC8 /* Assets.xcassets in Resources */,
+				7F68236A2BF3AFC400CA4AC8 /* MovieTableViewCell.xib in Resources */,
 				7F6823122BF3939900CA4AC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6823692BF3AFC400CA4AC8 /* MovieTableViewCell.swift in Sources */,
 				7F68235E2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift in Sources */,
 				7F6823622BF39E7F00CA4AC8 /* GetMovieDetailsUseCase.swift in Sources */,
 				7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */,
@@ -395,6 +422,7 @@
 				7F6823552BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift in Sources */,
 				7F6823512BF399DE00CA4AC8 /* Movie.swift in Sources */,
 				7F6823602BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift in Sources */,
+				7F6823642BF3AF4200CA4AC8 /* BaseViewController.swift in Sources */,
 				7F68230D2BF3939900CA4AC8 /* SceneDelegate.swift in Sources */,
 				7F6823532BF399EE00CA4AC8 /* MovieDetails.swift in Sources */,
 			);
