@@ -33,6 +33,10 @@
 		7F68236A2BF3AFC400CA4AC8 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6823682BF3AFC400CA4AC8 /* MovieTableViewCell.xib */; };
 		7F68236E2BF3B07500CA4AC8 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68236D2BF3B07500CA4AC8 /* UITableView+Extension.swift */; };
 		7F6823702BF3B09100CA4AC8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68236F2BF3B09100CA4AC8 /* UIImageView+Extension.swift */; };
+		7F6823732BF3B19200CA4AC8 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823722BF3B19200CA4AC8 /* PlayingViewController.swift */; };
+		7F6823762BF3B1A600CA4AC8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823752BF3B1A600CA4AC8 /* ComingViewController.swift */; };
+		7F6823792BF3B1B900CA4AC8 /* PopulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */; };
+		7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		7F6823682BF3AFC400CA4AC8 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		7F68236D2BF3B07500CA4AC8 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		7F68236F2BF3B09100CA4AC8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		7F6823722BF3B19200CA4AC8 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
+		7F6823752BF3B1A600CA4AC8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
+		7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewController.swift; sourceTree = "<group>"; };
+		7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +219,9 @@
 		7F6823432BF3963700CA4AC8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7F6823772BF3B1AB00CA4AC8 /* PopulerVc */,
+				7F6823742BF3B19700CA4AC8 /* UpcomingVc */,
+				7F6823712BF3B17600CA4AC8 /* NowPlayingVc */,
 				7F6823662BF3AFA400CA4AC8 /* MovieTableViewCell */,
 				7F6823652BF3AF9600CA4AC8 /* BaseVc */,
 			);
@@ -288,6 +299,31 @@
 				7F68236F2BF3B09100CA4AC8 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7F6823712BF3B17600CA4AC8 /* NowPlayingVc */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823722BF3B19200CA4AC8 /* PlayingViewController.swift */,
+			);
+			path = NowPlayingVc;
+			sourceTree = "<group>";
+		};
+		7F6823742BF3B19700CA4AC8 /* UpcomingVc */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823752BF3B1A600CA4AC8 /* ComingViewController.swift */,
+			);
+			path = UpcomingVc;
+			sourceTree = "<group>";
+		};
+		7F6823772BF3B1AB00CA4AC8 /* PopulerVc */ = {
+			isa = PBXGroup;
+			children = (
+				7F6823782BF3B1B900CA4AC8 /* PopulerViewController.swift */,
+				7F68237A2BF3B22800CA4AC8 /* PopulerViewModel.swift */,
+			);
+			path = PopulerVc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,12 +468,16 @@
 				7F68235C2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift in Sources */,
 				7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */,
 				7F6823572BF39AEF00CA4AC8 /* MoviesRepositoryImp.swift in Sources */,
+				7F6823792BF3B1B900CA4AC8 /* PopulerViewController.swift in Sources */,
 				7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */,
 				7F68236E2BF3B07500CA4AC8 /* UITableView+Extension.swift in Sources */,
 				7F6823552BF39A7D00CA4AC8 /* MoviesRepositoryProtocol.swift in Sources */,
+				7F6823732BF3B19200CA4AC8 /* PlayingViewController.swift in Sources */,
 				7F6823512BF399DE00CA4AC8 /* Movie.swift in Sources */,
+				7F6823762BF3B1A600CA4AC8 /* ComingViewController.swift in Sources */,
 				7F6823602BF39E3000CA4AC8 /* GetPopulerMoviesUseCase.swift in Sources */,
 				7F6823642BF3AF4200CA4AC8 /* BaseViewController.swift in Sources */,
+				7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */,
 				7F6823702BF3B09100CA4AC8 /* UIImageView+Extension.swift in Sources */,
 				7F68230D2BF3939900CA4AC8 /* SceneDelegate.swift in Sources */,
 				7F6823532BF399EE00CA4AC8 /* MovieDetails.swift in Sources */,
