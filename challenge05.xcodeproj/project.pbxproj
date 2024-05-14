@@ -19,6 +19,7 @@
 		7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823462BF3975200CA4AC8 /* EndPoint.swift */; };
 		7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823482BF3978200CA4AC8 /* RequestManager.swift */; };
 		7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68234A2BF397A000CA4AC8 /* ErrorMessage.swift */; };
+		7F68234D2BF3989E00CA4AC8 /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68234C2BF3989E00CA4AC8 /* MoviesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7F6823462BF3975200CA4AC8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		7F6823482BF3978200CA4AC8 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		7F68234A2BF397A000CA4AC8 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		7F68234C2BF3989E00CA4AC8 /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 		7F6823422BF3963200CA4AC8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7F68234C2BF3989E00CA4AC8 /* MoviesRouter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6823492BF3978200CA4AC8 /* RequestManager.swift in Sources */,
+				7F68234D2BF3989E00CA4AC8 /* MoviesRouter.swift in Sources */,
 				7F6823152BF3939900CA4AC8 /* challenge05.xcdatamodeld in Sources */,
 				7F68230B2BF3939900CA4AC8 /* AppDelegate.swift in Sources */,
 				7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */,
