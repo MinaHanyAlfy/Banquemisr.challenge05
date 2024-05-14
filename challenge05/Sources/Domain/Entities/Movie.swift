@@ -22,11 +22,11 @@ struct Movies: Codable {
 }
 
 // MARK: - Result
-struct Movie: Codable {
-    let adult: Bool?
-    let id: Int?
-    let originalTitle: String?
-    let posterPath, releaseDate, title: String?
+public struct Movie: Codable {
+    var adult: Bool?
+    var id: Int?
+    var originalTitle: String?
+    var posterPath, releaseDate, title: String?
 
     enum CodingKeys: String, CodingKey {
         case adult

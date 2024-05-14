@@ -42,6 +42,9 @@
 		7F6823822BF3B9E900CA4AC8 /* PlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823812BF3B9E900CA4AC8 /* PlayingViewModel.swift */; };
 		7F6823852BF3BBDD00CA4AC8 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823842BF3BBDD00CA4AC8 /* MovieDetailsViewController.swift */; };
 		7F6823872BF3BBEC00CA4AC8 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823862BF3BBEC00CA4AC8 /* MovieDetailsViewModel.swift */; };
+		7F68238A2BF3C85900CA4AC8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6823892BF3C85900CA4AC8 /* CoreDataManager.swift */; };
+		7FF1DCF72BF3CD5200E7E04F /* MovieCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1DCF52BF3CD5200E7E04F /* MovieCD+CoreDataClass.swift */; };
+		7FF1DCF82BF3CD5200E7E04F /* MovieCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1DCF62BF3CD5200E7E04F /* MovieCD+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		7F6823812BF3B9E900CA4AC8 /* PlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewModel.swift; sourceTree = "<group>"; };
 		7F6823842BF3BBDD00CA4AC8 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		7F6823862BF3BBEC00CA4AC8 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		7F6823892BF3C85900CA4AC8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7FF1DCF52BF3CD5200E7E04F /* MovieCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7FF1DCF62BF3CD5200E7E04F /* MovieCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,12 +157,12 @@
 		7F6823092BF3939900CA4AC8 /* challenge05 */ = {
 			isa = PBXGroup;
 			children = (
-				7F68230A2BF3939900CA4AC8 /* AppDelegate.swift */,
-				7F68230C2BF3939900CA4AC8 /* SceneDelegate.swift */,
 				7F6823402BF395A200CA4AC8 /* Sources */,
 				7F68233D2BF3956C00CA4AC8 /* Base */,
 				7F68233F2BF3959000CA4AC8 /* Resources */,
 				7F68231B2BF3939B00CA4AC8 /* Info.plist */,
+				7F68230C2BF3939900CA4AC8 /* SceneDelegate.swift */,
+				7F68230A2BF3939900CA4AC8 /* AppDelegate.swift */,
 			);
 			path = challenge05;
 			sourceTree = "<group>";
@@ -229,8 +235,8 @@
 		7F6823432BF3963700CA4AC8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				7F6823832BF3BBBF00CA4AC8 /* MovieDetailsVc */,
 				7F68237C2BF3B72600CA4AC8 /* Common */,
+				7F6823832BF3BBBF00CA4AC8 /* MovieDetailsVc */,
 				7F6823772BF3B1AB00CA4AC8 /* PopulerVc */,
 				7F6823742BF3B19700CA4AC8 /* UpcomingVc */,
 				7F6823712BF3B17600CA4AC8 /* NowPlayingVc */,
@@ -241,6 +247,7 @@
 		7F6823442BF3972200CA4AC8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7F6823882BF3C84800CA4AC8 /* CoreDataManager */,
 				7F68236B2BF3B05F00CA4AC8 /* Extensions */,
 				7F6823452BF3974600CA4AC8 /* NetworkManager */,
 			);
@@ -355,6 +362,16 @@
 				7F6823862BF3BBEC00CA4AC8 /* MovieDetailsViewModel.swift */,
 			);
 			path = MovieDetailsVc;
+			sourceTree = "<group>";
+		};
+		7F6823882BF3C84800CA4AC8 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7FF1DCF52BF3CD5200E7E04F /* MovieCD+CoreDataClass.swift */,
+				7FF1DCF62BF3CD5200E7E04F /* MovieCD+CoreDataProperties.swift */,
+				7F6823892BF3C85900CA4AC8 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6823872BF3BBEC00CA4AC8 /* MovieDetailsViewModel.swift in Sources */,
+				7FF1DCF82BF3CD5200E7E04F /* MovieCD+CoreDataProperties.swift in Sources */,
 				7F6823692BF3AFC400CA4AC8 /* MovieTableViewCell.swift in Sources */,
 				7F68235E2BF39DF000CA4AC8 /* GetComingMoviesUseCase.swift in Sources */,
 				7F6823852BF3BBDD00CA4AC8 /* MovieDetailsViewController.swift in Sources */,
@@ -502,6 +520,7 @@
 				7F68235C2BF39DB700CA4AC8 /* GetPlayingMoviesUseCase.swift in Sources */,
 				7F6823472BF3975200CA4AC8 /* EndPoint.swift in Sources */,
 				7F6823572BF39AEF00CA4AC8 /* MoviesRepositoryImp.swift in Sources */,
+				7FF1DCF72BF3CD5200E7E04F /* MovieCD+CoreDataClass.swift in Sources */,
 				7F6823792BF3B1B900CA4AC8 /* PopulerViewController.swift in Sources */,
 				7F68234B2BF397A000CA4AC8 /* ErrorMessage.swift in Sources */,
 				7F68236E2BF3B07500CA4AC8 /* UITableView+Extension.swift in Sources */,
@@ -514,6 +533,7 @@
 				7F6823642BF3AF4200CA4AC8 /* BaseViewController.swift in Sources */,
 				7F6823822BF3B9E900CA4AC8 /* PlayingViewModel.swift in Sources */,
 				7F68237B2BF3B22800CA4AC8 /* PopulerViewModel.swift in Sources */,
+				7F68238A2BF3C85900CA4AC8 /* CoreDataManager.swift in Sources */,
 				7F6823702BF3B09100CA4AC8 /* UIImageView+Extension.swift in Sources */,
 				7F68230D2BF3939900CA4AC8 /* SceneDelegate.swift in Sources */,
 				7F6823532BF399EE00CA4AC8 /* MovieDetails.swift in Sources */,
@@ -624,7 +644,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -681,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
