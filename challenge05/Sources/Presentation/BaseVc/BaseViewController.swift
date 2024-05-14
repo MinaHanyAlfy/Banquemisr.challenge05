@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
         let tableView = UITableView()
         tableView.allowsSelection = true
         tableView.separatorStyle = .none
+        tableView.registerCell(tableViewCell: MovieTableViewCell.self)
         tableView.backgroundColor = .systemBackground
         return tableView
     }()

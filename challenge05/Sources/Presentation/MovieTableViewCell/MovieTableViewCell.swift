@@ -24,6 +24,8 @@ class MovieTableViewCell: UITableViewCell {
         movieTitleLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate
         
+        movieImageView.loadImageUsingCacheWithURLString(movie.posterPath ?? "",
+                                                        placeHolder: UIImage(named: "placeholder"))
     }
     
     override func prepareForReuse() {
