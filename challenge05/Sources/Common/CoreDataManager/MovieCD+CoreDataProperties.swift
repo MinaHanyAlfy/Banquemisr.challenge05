@@ -22,6 +22,7 @@ extension MovieCD {
     @NSManaged public var posterPath: String?
     @NSManaged public var releaseDate: String?
     @NSManaged public var title: String?
+    @NSManaged public var type: String?
 
 }
 
