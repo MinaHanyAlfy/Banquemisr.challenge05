@@ -54,10 +54,11 @@ class PopulerViewModel: PopulerViewModelProtocol {
                 if self.dataSource.count == 0 {
                     self.dataSource = movieList ?? []
                 } else {
-                    self.dataSource.append(contentsOf: movieList ?? [])
+                    if !(movieList?.count == 0) {
+                        self.dataSource.append(contentsOf: movieList ?? [])
+                    }
                 }
                 self.isLoading = false
-
             case .failure(let error):
                 print(error)
                 self.isLoading = false

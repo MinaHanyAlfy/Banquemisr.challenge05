@@ -62,6 +62,7 @@ extension PopulerViewController {
                 if let error = error {
                     print("Error", error)
                     self?.stopLoading()
+                    self?.updateEmptyStateView()
                 }
             })
             .store(in: &cancellabels)

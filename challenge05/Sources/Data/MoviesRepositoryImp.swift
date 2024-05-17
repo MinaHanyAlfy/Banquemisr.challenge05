@@ -13,12 +13,18 @@ import Combine
 ///Send api request to request mangaer
 public class MoviesRepositoryImp: MoviesRepositoryProtocol {
     private var cancellabels = Set<AnyCancellable>()
+    private let reachability = Reachability.shared
+    private let coreData = CoreDataManager.shared
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
+    }
     
     func getPopulerMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
         let subject = PassthroughSubject<Movies, ErrorMessage>()
         let configurationRequest = MoviesRouter.getPopulerMovies(page: page)
         let publisher = subject.eraseToAnyPublisher()
-        
+        if reachability.isConnectedToNetwork() {
             RequestManager.beginRequest(request: configurationRequest, model: Movies.self)
                 .sink(receiveCompletion: { completion in
                     if case let .failure(error) = completion {
@@ -26,9 +32,22 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
                     }
                 },receiveValue: { repos in
                     subject.send(repos)
+                    self.coreData.saveMovies(movies: repos.results ?? [], type: .Populer)
+
                 })
                 .store(in: &cancellabels)
             return publisher
+        } else {
+            if coreData.fetchMovies(type: .Populer).count == 0 {
+                subject.send(completion: .failure(.NoInternet))
+                return publisher
+            } else {
+                let movies = Movies(page: 1, results: coreData.fetchMovies(type: .Populer), totalPages: 1, totalResults: 1)
+                return Just(movies)
+                    .setFailureType(to: ErrorMessage.self)
+                    .eraseToAnyPublisher()
+            }
+        }
     }
     
     func getNowPlayingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
@@ -36,16 +55,30 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
         let configurationRequest = MoviesRouter.getPlayingMovies(page: page)
         let publisher = subject.eraseToAnyPublisher()
         
-        RequestManager.beginRequest(request: configurationRequest, model: Movies.self)
+        if reachability.isConnectedToNetwork() {
+            RequestManager.beginRequest(request: configurationRequest, model: Movies.self)
                 .sink(receiveCompletion: { completion in
                     if case let .failure(error) = completion {
                         subject.send(completion: .failure(error))
                     }
                 },receiveValue: { repos in
                     subject.send(repos)
+                    self.coreData.saveMovies(movies: repos.results ?? [], type: .NowPlaying)
+
                 })
                 .store(in: &cancellabels)
             return publisher
+        } else {
+            if coreData.fetchMovies(type: .NowPlaying).count == 0 {
+                subject.send(completion: .failure(.NoInternet))
+                return publisher
+            } else {
+                let movies = Movies(page: 1, results: coreData.fetchMovies(type: .NowPlaying), totalPages: 1, totalResults: 1)
+                return Just(movies)
+                    .setFailureType(to: ErrorMessage.self)
+                    .eraseToAnyPublisher()
+            }
+        }
     }
     
     func getUpcomingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
@@ -53,16 +86,29 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
         let configurationRequest = MoviesRouter.getUpcomingMovies(page: page)
         let publisher = subject.eraseToAnyPublisher()
         
-        RequestManager.beginRequest(request: configurationRequest, model: Movies.self)
+        if reachability.isConnectedToNetwork() {
+            RequestManager.beginRequest(request: configurationRequest, model: Movies.self)
                 .sink(receiveCompletion: { completion in
                     if case let .failure(error) = completion {
                         subject.send(completion: .failure(error))
                     }
                 },receiveValue: { repos in
                     subject.send(repos)
+                    self.coreData.saveMovies(movies: repos.results ?? [], type: .Upcoming)
                 })
                 .store(in: &cancellabels)
             return publisher
+        } else {
+            if coreData.fetchMovies(type: .Upcoming).count == 0 {
+                subject.send(completion: .failure(.NoInternet))
+                return publisher
+            } else {
+                let movies = Movies(page: 1, results: coreData.fetchMovies(type: .Upcoming), totalPages: 1, totalResults: 1)
+                return Just(movies)
+                    .setFailureType(to: ErrorMessage.self)
+                    .eraseToAnyPublisher()
+            }
+        }
     }
     
     func getMovieDetails(movieId: Int) -> AnyPublisher<MovieDetails, ErrorMessage> {
@@ -70,7 +116,8 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
         let configurationRequest = MoviesRouter.getMovieDetails(movieId: movieId)
         let publisher = subject.eraseToAnyPublisher()
         
-        RequestManager.beginRequest(request: configurationRequest, model: MovieDetails.self)
+        if reachability.isConnectedToNetwork() {
+            RequestManager.beginRequest(request: configurationRequest, model: MovieDetails.self)
                 .sink(receiveCompletion: { completion in
                     if case let .failure(error) = completion {
                         subject.send(completion: .failure(error))
@@ -80,5 +127,9 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
                 })
                 .store(in: &cancellabels)
             return publisher
+        } else {
+            subject.send(completion: .failure(.NoInternet))
+            return publisher
+        }
     }
 }

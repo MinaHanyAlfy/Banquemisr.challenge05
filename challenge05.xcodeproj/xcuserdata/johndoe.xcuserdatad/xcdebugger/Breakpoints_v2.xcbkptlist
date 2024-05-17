@@ -7,15 +7,223 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "02D87D3C-AB40-465B-9FB2-B5B92E4E2CCE"
+            uuid = "A2983DD4-96D6-4A3C-8CA4-D99D63CBA44C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "challenge05/Sources/Domain/UseCases/GetPlayingMoviesUseCase.swift"
+            filePath = "challenge05/Sources/Data/MoviesRepositoryImp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "getMovieDetails(movieId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE943B80-DC1D-4C8F-92E3-070E1944BCCD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Data/MoviesRepositoryImp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getPopulerMovies(page:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A0AAB9E-84B0-4FD5-8255-B6213A8D4473"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Data/MoviesRepositoryImp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getPopulerMovies(page:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3A0AAB9E-84B0-4FD5-8255-B6213A8D4473 - 5327cfa37304003a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;challenge05.ErrorMessage&gt;) -&gt; () in challenge05.MoviesRepositoryImp.getPopulerMovies(page: Swift.Int) -&gt; Combine.AnyPublisher&lt;challenge05.Movies, challenge05.ErrorMessage&gt;"
+                  moduleName = "challenge05"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/BanqueMasr/challenge05/challenge05/Sources/Data/MoviesRepositoryImp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "3A0AAB9E-84B0-4FD5-8255-B6213A8D4473 - c62c923dd7847b1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (challenge05.Movies) -&gt; () in challenge05.MoviesRepositoryImp.getPopulerMovies(page: Swift.Int) -&gt; Combine.AnyPublisher&lt;challenge05.Movies, challenge05.ErrorMessage&gt;"
+                  moduleName = "challenge05"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/BanqueMasr/challenge05/challenge05/Sources/Data/MoviesRepositoryImp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "98">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E477C01-10C2-4F6E-A13A-4BAB9E6FD7C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "execute(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E477C01-10C2-4F6E-A13A-4BAB9E6FD7C4 - de9e49e820f71682"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenge05.GetPopulerMoviesUseCase.execute(completion: Swift.Optional&lt;(Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;challenge05.Movie&gt;&gt;, challenge05.ErrorMessage&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "challenge05"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/BanqueMasr/challenge05/challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1449">
+               </Location>
+               <Location
+                  uuid = "7E477C01-10C2-4F6E-A13A-4BAB9E6FD7C4 - de9e49e820f71682"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenge05.GetPopulerMoviesUseCase.execute(completion: Swift.Optional&lt;(Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;challenge05.Movie&gt;&gt;, challenge05.ErrorMessage&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "challenge05"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/BanqueMasr/challenge05/challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEA46AB4-9057-41E1-967B-125DC8588EE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "execute(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AEA46AB4-9057-41E1-967B-125DC8588EE6 - de9e49e820f716e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenge05.GetPopulerMoviesUseCase.execute(completion: Swift.Optional&lt;(Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;challenge05.Movie&gt;&gt;, challenge05.ErrorMessage&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "challenge05"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/BanqueMasr/challenge05/challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1453">
+               </Location>
+               <Location
+                  uuid = "AEA46AB4-9057-41E1-967B-125DC8588EE6 - de9e49e820f716e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenge05.GetPopulerMoviesUseCase.execute(completion: Swift.Optional&lt;(Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;challenge05.Movie&gt;&gt;, challenge05.ErrorMessage&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "challenge05"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/BanqueMasr/challenge05/challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1449">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B52CEEA6-2A72-4CAB-B3B6-00DD9903AD77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Data/MoviesRepositoryImp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getPopulerMovies(page:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDC360E0-65A1-4E2B-8089-2F83DF8C829F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Data/MoviesRepositoryImp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getPopulerMovies(page:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0D043EC-4276-499C-A192-924E10E64B45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenge05/Sources/Domain/UseCases/GetPopulerMoviesUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "execute(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +231,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FEC14311-8C22-4D7E-86DE-4F346AE62097"
+            uuid = "62D0C181-E774-495D-A044-A4CA139EBE4F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "challenge05/Sources/Presentation/NowPlayingVc/PlayingViewController.swift"
+            filePath = "challenge05/Sources/Presentation/PopulerVc/PopulerViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "fetchMovies()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

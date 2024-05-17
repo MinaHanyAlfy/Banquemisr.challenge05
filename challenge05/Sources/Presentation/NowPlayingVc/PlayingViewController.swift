@@ -14,7 +14,6 @@ class PlayingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Now Playing"
         
         startLoading()
