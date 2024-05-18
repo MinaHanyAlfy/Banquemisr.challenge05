@@ -10,7 +10,7 @@ import Combine
 
 class ComingViewController: BaseViewController {
     private var cancellabels = Set<AnyCancellable>()
-    var viewModel: ComingViewModelProtocol!
+    private var viewModel: ComingViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()

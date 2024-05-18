@@ -24,30 +24,30 @@ protocol MovieDetailsViewModelProtocol {
 
 class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     @Published private var error: ErrorMessage? = nil
-    var errorPublisher: Published<ErrorMessage?>.Publisher {$error}
+    public  var errorPublisher: Published<ErrorMessage?>.Publisher {$error}
     
     @Published internal var isMovieFetched: Bool? = nil
-    var movieDetailsPublisher: Published<Bool?>.Publisher {$isMovieFetched}
+    public  var movieDetailsPublisher: Published<Bool?>.Publisher {$isMovieFetched}
     
-    var details: MovieDetails? = nil
+    private var details: MovieDetails? = nil
     private var movieId: Int = 0
-    var isLoading: Bool = false
+    public  var isLoading: Bool = false
     private var movieDetailsUseCase: GetMovieDetailsUseCaseProtocol?
     
-    func viewDidLoad() {
+    public func viewDidLoad() {
         //
     }
 
-    func viewDidAppear() {
+    public func viewDidAppear() {
         fetchMovieDetails()
     }
     
-    init(useCase: GetMovieDetailsUseCaseProtocol? = GetMovieDetailsUseCase(), movieId: Int) {
+    public init(useCase: GetMovieDetailsUseCaseProtocol? = GetMovieDetailsUseCase(), movieId: Int) {
         self.movieDetailsUseCase = useCase
         self.movieId = movieId
     }
     
-    func fetchMovieDetails() {
+    public func fetchMovieDetails() {
         isLoading = true
         movieDetailsUseCase?.execute(movieId: movieId, completion: { [weak self] result in
             guard let self = self else { return }
@@ -63,21 +63,21 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
         })
     }
     
-    func getMovieTitle() -> String {
+    public func getMovieTitle() -> String {
         guard let details = details else { return "" }
         return details.title ?? details.originalTitle ?? ""
     }
     
-    func getMovieReleaseDate() -> String {
+    public func getMovieReleaseDate() -> String {
         guard let details = details else { return "" }
         return details.releaseDate ?? ""
     }
-    func getMovieRunTimes() -> Int {
+    public func getMovieRunTimes() -> Int {
         guard let details = details else { return 0 }
         return details.runtime ?? 0
     }
     
-    func getMovieGenres() -> String {
+    public func getMovieGenres() -> String {
         guard let details = details else { return "" }
         var genres = [String]()
         for genre in details.genres ?? [] {
@@ -87,12 +87,12 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
         return genres.joined(separator: " - ")
     }
     
-    func getMovieOverview() -> String {
+    public func getMovieOverview() -> String {
         guard let details = details else { return "" }
         return details.overview ?? ""
     }
     
-    func getMovieImage() -> String {
+    public func getMovieImage() -> String {
         guard let details = details else { return "" }
         return details.posterPath ?? ""
     }

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol MoviesRepositoryProtocol {
+public protocol MoviesRepositoryProtocol {
     func getPopulerMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage>
     func getNowPlayingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage>
     func getUpcomingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage>

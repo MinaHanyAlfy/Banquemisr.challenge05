@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-class RequestManager {
+public class RequestManager {
     /// Network Request Manager Using Combine
     /// - Parameters:
     ///   - request: EndPoint Request That have (baseURL-method'POST-GET-PUT-DELETE'-urlSubFolder-queryItems)
     ///   - model: Model is Generic Type To Response Specific & Generic Object (String-JSON-Int-....)
     /// - Returns: Object Or ErrorMessage
-    class func beginRequest<T: Decodable>(request: EndPoint, model: T.Type) -> AnyPublisher<T,ErrorMessage> {
+    public class func beginRequest<T: Decodable>(request: EndPoint, model: T.Type) -> AnyPublisher<T,ErrorMessage> {
         
         let urlRequest = request.request
         

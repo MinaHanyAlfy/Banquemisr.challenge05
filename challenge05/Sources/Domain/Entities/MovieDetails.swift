@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - MovieDetails
-struct MovieDetails: Codable {
+public struct MovieDetails: Codable {
     var adult: Bool?
     var budget: Int?
     var genres: [Genre]?
@@ -41,7 +41,7 @@ struct MovieDetails: Codable {
 }
 
 // MARK: - Genre
-struct Genre: Codable {
+public struct Genre: Codable {
     var id: Int?
     var name: String?
 }

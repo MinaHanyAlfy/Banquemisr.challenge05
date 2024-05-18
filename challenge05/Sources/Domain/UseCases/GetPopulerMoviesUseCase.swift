@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-protocol GetPopulerMoviesUseCaseProtocol {
+public protocol GetPopulerMoviesUseCaseProtocol {
     func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?)
 }
 
-class GetPopulerMoviesUseCase: GetPopulerMoviesUseCaseProtocol {
+public class GetPopulerMoviesUseCase: GetPopulerMoviesUseCaseProtocol {
     private var cancellabels = Set<AnyCancellable>()
-    var repo: MoviesRepositoryProtocol?
+    private var repo: MoviesRepositoryProtocol?
     private var currentPage = 1
     private var totalPages = 1
     
@@ -22,7 +22,7 @@ class GetPopulerMoviesUseCase: GetPopulerMoviesUseCaseProtocol {
         self.repo = repo
     }
     
-    func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?) {
+    public func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?) {
         if currentPage <= totalPages || currentPage == 1  {
             repo?.getPopulerMovies(page: currentPage)
                 .receive(on: DispatchQueue.main)

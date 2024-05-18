@@ -7,10 +7,11 @@
 
 import UIKit
 
-class MovieTableViewCell: UITableViewCell {
+internal class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -20,7 +21,7 @@ class MovieTableViewCell: UITableViewCell {
 
     }
     
-    func setupCell(movie: Movie) {
+    public func setupCell(movie: Movie) {
         movieTitleLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate
         

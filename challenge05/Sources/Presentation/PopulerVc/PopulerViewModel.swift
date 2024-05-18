@@ -22,29 +22,29 @@ protocol PopulerViewModelProtocol {
 
 class PopulerViewModel: PopulerViewModelProtocol {
     @Published private var error: ErrorMessage? = nil
-    var errorPublisher: Published<ErrorMessage?>.Publisher {$error}
+    public  var errorPublisher: Published<ErrorMessage?>.Publisher {$error}
     
     @Published internal var isMovieFetched: Bool? = nil
-    var moviesPublisher: Published<Bool?>.Publisher {$isMovieFetched}
+    public  var moviesPublisher: Published<Bool?>.Publisher {$isMovieFetched}
     
-    var dataSource: [Movie] = []
+    public  var dataSource: [Movie] = []
     private var populerUseCase: GetPopulerMoviesUseCaseProtocol?
-    var isLoading: Bool = false
+    public  var isLoading: Bool = false
 
     
     init(useCase: GetPopulerMoviesUseCaseProtocol? = GetPopulerMoviesUseCase()) {
         self.populerUseCase = useCase
     }
     
-    func viewDidLoad() {
+    public func viewDidLoad() {
         fetchMovies()
     }
     
-    func viewDidAppear() {
+    public func viewDidAppear() {
         //
     }
     
-    func fetchMovies() {
+    public func fetchMovies() {
         isLoading = true
         populerUseCase?.execute(completion: { [weak self] result in
             guard let self = self else { return }
@@ -67,7 +67,7 @@ class PopulerViewModel: PopulerViewModelProtocol {
         })
     }
     
-    func getMovie(index: Int) -> Movie {
+    public func getMovie(index: Int) -> Movie {
         return dataSource[index]
     }
     

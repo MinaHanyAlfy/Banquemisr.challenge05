@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZeroStateView: UIView {
+internal class ZeroStateView: UIView {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -17,7 +17,7 @@ class ZeroStateView: UIView {
         return label
     }()
     
-    var message: String? {
+    internal var message: String? {
         get { return messageLabel.text }
         set { messageLabel.text = newValue }
     }

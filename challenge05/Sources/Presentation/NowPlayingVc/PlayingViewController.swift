@@ -10,7 +10,7 @@ import Combine
 
 class PlayingViewController: BaseViewController {
     private var cancellabels = Set<AnyCancellable>()
-    var viewModel: PlayingViewModelProtocol!
+    private var viewModel: PlayingViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()

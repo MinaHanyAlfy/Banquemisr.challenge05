@@ -9,13 +9,13 @@ import Foundation
 
 fileprivate let requestTimeOut: Double = 60
 
-enum HTTPMethod: String{
+public enum HTTPMethod: String{
     case get = "GET"
     case post = "POST"
     case put = "PUT"
 }
 
-protocol EndPoint{
+public protocol EndPoint{
     var baseURL: String { get }
     var method: HTTPMethod { get }
     var urlSubFolder: String { get }

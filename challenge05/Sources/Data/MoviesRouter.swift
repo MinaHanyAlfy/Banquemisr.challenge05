@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MoviesRouter: EndPoint {
+internal enum MoviesRouter: EndPoint {
     case getUpcomingMovies(page: Int)
     case getPopulerMovies(page: Int)
     case getPlayingMovies(page: Int)

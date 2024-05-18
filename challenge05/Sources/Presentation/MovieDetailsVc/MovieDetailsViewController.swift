@@ -23,9 +23,9 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var overviewLabel: UILabel!
     
     private var cancellabels = Set<AnyCancellable>()
-    var viewModel: MovieDetailsViewModelProtocol!
+    private var viewModel: MovieDetailsViewModelProtocol!
     
-    static func ViewController(movieId: Int) -> MovieDetailsViewController {
+    public static func ViewController(movieId: Int) -> MovieDetailsViewController {
         let sb = UIStoryboard(name: "Main", bundle: .main)
         let vc = sb.instantiateViewController(identifier: "MovieDetailsViewController", creator: { coder -> MovieDetailsViewController? in
             MovieDetailsViewController(coder: coder)

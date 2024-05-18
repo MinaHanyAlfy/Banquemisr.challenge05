@@ -9,17 +9,8 @@ import XCTest
 @testable import challenge05
 
 final class CoreDataManagerTest: XCTestCase {
-    
     let coredata = CoreDataManager.shared
     var movies = [Movie(adult: false, id: 1200, originalTitle: "Marvel", posterPath: "", releaseDate: "", title: "Marvel"), Movie(adult: true, id: 1100, originalTitle: "Injustice", posterPath: "", releaseDate: "", title: "Injustice")]
-    
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
     
     func testSaveAndFetch() throws {
         coredata.saveMovies(movies: movies, type: .Populer)
@@ -39,8 +30,8 @@ final class CoreDataManagerTest: XCTestCase {
     }
     
     func testFetchMovies() throws {
-        let movies = coredata.fetchMovies(type: .NowPlaying)
-        XCTAssertEqual(movies.count, 0)
+        let movies = coredata.fetchMovies(type: .Populer)
+        XCTAssertEqual(movies.count, 2)
     }
     
     func testClearMovies() async throws {

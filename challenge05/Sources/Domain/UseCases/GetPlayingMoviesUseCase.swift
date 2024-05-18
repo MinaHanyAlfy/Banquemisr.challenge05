@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-protocol GetPlayingMoviesUseCaseProtocol {
+public protocol GetPlayingMoviesUseCaseProtocol {
     func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?)
 }
 
-class GetPlayingMoviesUseCase: GetPlayingMoviesUseCaseProtocol {
+public class GetPlayingMoviesUseCase: GetPlayingMoviesUseCaseProtocol {
     private var cancellabels = Set<AnyCancellable>()
-    var repo: MoviesRepositoryProtocol?
+    private var repo: MoviesRepositoryProtocol?
     private var currentPage = 1
     private var totalPages = 1
     
@@ -22,7 +22,7 @@ class GetPlayingMoviesUseCase: GetPlayingMoviesUseCaseProtocol {
         self.repo = repo
     }
     
-    func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?) {
+    public func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?) {
         if currentPage <= totalPages || currentPage == 1  {
             repo?.getNowPlayingMovies(page: currentPage)
                 .receive(on: DispatchQueue.main)

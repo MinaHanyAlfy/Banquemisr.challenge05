@@ -8,7 +8,7 @@
 import UIKit
 import UIKit
 
-class BaseViewController: UIViewController {
+internal class BaseViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = true

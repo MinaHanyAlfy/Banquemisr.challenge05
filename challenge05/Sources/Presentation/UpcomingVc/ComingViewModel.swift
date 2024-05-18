@@ -21,29 +21,29 @@ protocol ComingViewModelProtocol {
 
 class ComingViewModel: ComingViewModelProtocol {
     @Published private var error: ErrorMessage? = nil
-    var errorPublisher: Published<ErrorMessage?>.Publisher {$error}
+    public  var errorPublisher: Published<ErrorMessage?>.Publisher {$error}
     
     @Published internal var isMovieFetched: Bool? = nil
-    var moviesPublisher: Published<Bool?>.Publisher {$isMovieFetched}
+    public  var moviesPublisher: Published<Bool?>.Publisher {$isMovieFetched}
     
-    var dataSource: [Movie] = []
-    var isLoading: Bool = false
+    public  var dataSource: [Movie] = []
+    public  var isLoading: Bool = false
     private var comingUseCase: GetComingMoviesUseCaseProtocol?
     
     
-    init(useCase: GetComingMoviesUseCaseProtocol? = GetComingMoviesUseCase()) {
+    public init(useCase: GetComingMoviesUseCaseProtocol? = GetComingMoviesUseCase()) {
         self.comingUseCase = useCase
     }
     
-    func viewDidLoad() {
+    public func viewDidLoad() {
         fetchMovies()
     }
     
-    func viewDidAppear() {
+    public func viewDidAppear() {
         //
     }
     
-    func fetchMovies() {
+    public func fetchMovies() {
         isLoading = true
         comingUseCase?.execute(completion: { [weak self] result in
             guard let self = self else { return }
@@ -66,7 +66,7 @@ class ComingViewModel: ComingViewModelProtocol {
         })
     }
     
-    func getMovie(index: Int) -> Movie {
+    public func getMovie(index: Int) -> Movie {
         return dataSource[index]
     }
     

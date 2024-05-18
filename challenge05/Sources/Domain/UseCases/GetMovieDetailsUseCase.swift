@@ -8,20 +8,19 @@
 import Foundation
 import Combine
 
-protocol GetMovieDetailsUseCaseProtocol {
+public protocol GetMovieDetailsUseCaseProtocol {
     func execute(movieId: Int, completion: ((Result<MovieDetails?, ErrorMessage>) -> Void)?)
 }
 
-class GetMovieDetailsUseCase: GetMovieDetailsUseCaseProtocol {
+public class GetMovieDetailsUseCase: GetMovieDetailsUseCaseProtocol {
     private var cancellabels = Set<AnyCancellable>()
-    var repo: MoviesRepositoryProtocol?
+    private var repo: MoviesRepositoryProtocol?
     
     init(repo: MoviesRepositoryProtocol? = MoviesRepositoryImp()) {
         self.repo = repo
     }
-
     
-    func execute(movieId: Int, completion: ((Result<MovieDetails?, ErrorMessage>) -> Void)?) {
+    public func execute(movieId: Int, completion: ((Result<MovieDetails?, ErrorMessage>) -> Void)?) {
         repo?.getMovieDetails(movieId: movieId)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { comp in
@@ -33,6 +32,4 @@ class GetMovieDetailsUseCase: GetMovieDetailsUseCaseProtocol {
             })
             .store(in: &cancellabels)
     }
-    
-    
 }

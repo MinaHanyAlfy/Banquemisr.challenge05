@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Movie
-struct Movies: Codable {
+public struct Movies: Codable {
     var page: Int? = 0
     var results: [Movie]? = []
     var totalPages: Int? = 0

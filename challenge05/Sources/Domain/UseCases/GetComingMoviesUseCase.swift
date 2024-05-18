@@ -12,9 +12,9 @@ protocol GetComingMoviesUseCaseProtocol {
     func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?)
 }
 
-class GetComingMoviesUseCase: GetComingMoviesUseCaseProtocol {
+public class GetComingMoviesUseCase: GetComingMoviesUseCaseProtocol {
     private var cancellabels = Set<AnyCancellable>()
-    var repo: MoviesRepositoryProtocol?
+    private var repo: MoviesRepositoryProtocol?
     private var currentPage = 1
     private var totalPages = 1
     
@@ -22,7 +22,7 @@ class GetComingMoviesUseCase: GetComingMoviesUseCaseProtocol {
         self.repo = repo
     }
     
-    func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?) {
+    public func execute(completion: ((Result<[Movie]?, ErrorMessage>) -> Void)?) {
         if currentPage <= totalPages || currentPage == 1  {
             repo?.getUpcomingMovies(page: currentPage)
                 .receive(on: DispatchQueue.main)

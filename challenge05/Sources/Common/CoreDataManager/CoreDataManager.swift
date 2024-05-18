@@ -8,16 +8,16 @@
 import UIKit
 import CoreData
 
-enum MovieType: String {
+public enum MovieType: String {
     case Populer    = "populer"
     case Upcoming   = "coming"
     case NowPlaying = "playing"
 }
 
-class CoreDataManager {
+open class CoreDataManager {
     static let shared = CoreDataManager()
     
-    func appDelegate() -> AppDelegate? {
+    private func appDelegate() -> AppDelegate? {
         if Thread.isMainThread {
             return UIApplication.shared.delegate as? AppDelegate
         } else {
@@ -29,12 +29,12 @@ class CoreDataManager {
         }
     }
     
-    func context() ->  NSManagedObjectContext? {
+    private func context() ->  NSManagedObjectContext? {
         let context = appDelegate()?.persistentContainer.viewContext
         return context
     }
     
-    func save() {
+    private func save() {
         appDelegate()?.saveContext()
     }
     
@@ -44,7 +44,7 @@ class CoreDataManager {
 //MARK: Movie Handler
 extension CoreDataManager {
     /////////// Manage All Movies
-    func fetchMovies(type: MovieType) -> [Movie] {
+    public func fetchMovies(type: MovieType) -> [Movie] {
         let context = context()
         let fetchRequest: NSFetchRequest<MovieCD> = MovieCD.fetchRequest()
         guard let objects = try?  context?.fetch(fetchRequest) else { return [] }
@@ -59,7 +59,7 @@ extension CoreDataManager {
         return movies
     }
     
-    func saveMovies(movies: [Movie], type: MovieType) {
+    public func saveMovies(movies: [Movie], type: MovieType) {
         for movie in movies {
             if !isExist(id: movie.id ?? 0) {
                 let mov = MovieCD(context: context() ?? NSManagedObjectContext())
@@ -79,7 +79,7 @@ extension CoreDataManager {
             }
         }
     }
-    func clearMovies() {
+    public func clearMovies() {
         let fetchRequestProduct: NSFetchRequest<MovieCD> = MovieCD.fetchRequest()
         let objects = try! context()?.fetch(fetchRequestProduct)
         
@@ -95,7 +95,7 @@ extension CoreDataManager {
     }
 
     ///////Finding Movie Duplicate
-    func isExist(id: Int) -> Bool {
+    public func isExist(id: Int) -> Bool {
         let fetchRequest: NSFetchRequest<MovieCD> = MovieCD.fetchRequest()
         fetchRequest.fetchLimit =  1
         fetchRequest.predicate = NSPredicate(format: "id == %@" ,"\(id)")

@@ -11,7 +11,7 @@ import Combine
 class PopulerViewController: BaseViewController {
     
     private var cancellabels = Set<AnyCancellable>()
-    var viewModel: PopulerViewModelProtocol!
+    private var viewModel: PopulerViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()

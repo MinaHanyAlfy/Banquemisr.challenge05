@@ -13,14 +13,16 @@ import Combine
 ///Send api request to request mangaer
 public class MoviesRepositoryImp: MoviesRepositoryProtocol {
     private var cancellabels = Set<AnyCancellable>()
-    private let reachability = Reachability.shared
+    public  var reachability = Reachability.shared
     private let coreData = CoreDataManager.shared
 
+    public init() {}
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
     }
     
-    func getPopulerMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
+    public func getPopulerMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
         let subject = PassthroughSubject<Movies, ErrorMessage>()
         let configurationRequest = MoviesRouter.getPopulerMovies(page: page)
         let publisher = subject.eraseToAnyPublisher()
@@ -42,15 +44,20 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
                 subject.send(completion: .failure(.NoInternet))
                 return publisher
             } else {
-                let movies = Movies(page: 1, results: coreData.fetchMovies(type: .Populer), totalPages: 1, totalResults: 1)
-                return Just(movies)
-                    .setFailureType(to: ErrorMessage.self)
-                    .eraseToAnyPublisher()
+                if coreData.fetchMovies(type: .Populer).count == 0 {
+                    subject.send(completion: .failure(.NoInternet))
+                    return publisher
+                } else {
+                    let movies = Movies(page: 1, results: coreData.fetchMovies(type: .Populer), totalPages: 1, totalResults: 1)
+                    return Just(movies)
+                        .setFailureType(to: ErrorMessage.self)
+                        .eraseToAnyPublisher()
+                }
             }
         }
     }
     
-    func getNowPlayingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
+    public func getNowPlayingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
         let subject = PassthroughSubject<Movies, ErrorMessage>()
         let configurationRequest = MoviesRouter.getPlayingMovies(page: page)
         let publisher = subject.eraseToAnyPublisher()
@@ -81,7 +88,7 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
         }
     }
     
-    func getUpcomingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
+    public func getUpcomingMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
         let subject = PassthroughSubject<Movies, ErrorMessage>()
         let configurationRequest = MoviesRouter.getUpcomingMovies(page: page)
         let publisher = subject.eraseToAnyPublisher()
@@ -111,7 +118,7 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
         }
     }
     
-    func getMovieDetails(movieId: Int) -> AnyPublisher<MovieDetails, ErrorMessage> {
+    public func getMovieDetails(movieId: Int) -> AnyPublisher<MovieDetails, ErrorMessage> {
         let subject = PassthroughSubject<MovieDetails, ErrorMessage>()
         let configurationRequest = MoviesRouter.getMovieDetails(movieId: movieId)
         let publisher = subject.eraseToAnyPublisher()
