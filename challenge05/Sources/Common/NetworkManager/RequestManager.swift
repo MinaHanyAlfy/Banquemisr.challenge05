@@ -31,15 +31,15 @@ public class RequestManager {
                 }
                 
                 let dataString = String(data: data, encoding: .utf8) ?? ""
-                print("\n ________ API \(request) Response ______\n ")
-                print("__________ \n \(dataString.count) \n ___________")
+//                print("\n ________ API \(request) Response ______\n ")
+//                print("__________ \n \(dataString.count) \n ___________")
 
                 return data
             }
             .decode(type: model.self, decoder: JSONDecoder())
             .mapError({ error -> ErrorMessage in
-                print("\n ________ API \(request) Error ______ ")
-                print("-Error-: ", error)
+//                print("\n ________ API \(request) Error ______ ")
+//                print("-Error-: ", error)
                 return error as? ErrorMessage ?? .InvalidResponse
             })
             .eraseToAnyPublisher()

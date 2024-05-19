@@ -89,6 +89,9 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     
     public func getMovieOverview() -> String {
         guard let details = details else { return "" }
+        if details.overview == "" {
+            return "There's no overview for this movie"
+        }
         return details.overview ?? ""
     }
     
