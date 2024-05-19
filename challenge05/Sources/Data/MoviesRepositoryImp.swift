@@ -18,9 +18,6 @@ public class MoviesRepositoryImp: MoviesRepositoryProtocol {
 
     public init() {}
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
-    }
     
     public func getPopulerMovies(page: Int) -> AnyPublisher<Movies, ErrorMessage> {
         let subject = PassthroughSubject<Movies, ErrorMessage>()

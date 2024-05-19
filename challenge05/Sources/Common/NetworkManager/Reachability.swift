@@ -6,47 +6,35 @@
 //
 
 import Foundation
-import Network
+import SystemConfiguration
 
 public class Reachability {
-
     static let shared = Reachability()
-    private let monitor = NWPathMonitor()
-    private let queue = DispatchQueue(label: "NetworkMonitor")
     
-    private var isConnected: Bool = false {
-        didSet {
-            // Notify on main thread
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: .reachabilityChanged, object: nil)
+    private init() {}
+    
+    func isConnectedToNetwork() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+
+        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                SCNetworkReachabilityCreateWithAddress(nil, $0)
             }
+        }) else {
+            return false
         }
-    }
-    
-    private init() {
-        startMonitoring()
-    }
-    
-    deinit {
-        stopMonitoring()
-    }
-    
-    private func startMonitoring() {
-        monitor.pathUpdateHandler = { [weak self] path in
-            self?.isConnected = path.status == .satisfied
+
+        var flags: SCNetworkReachabilityFlags = []
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
+            return false
         }
-        monitor.start(queue: queue)
+
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        return (isReachable && !needsConnection)
     }
     
-    private func stopMonitoring() {
-        monitor.cancel()
-    }
-    
-    public func isConnectedToNetwork() -> Bool {
-        return isConnected
-    }
 }
 
-extension Notification.Name {
-    static let reachabilityChanged = Notification.Name("reachabilityChanged")
-}
