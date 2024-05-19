@@ -12,9 +12,10 @@ protocol PlayingViewModelProtocol {
     var errorPublisher: Published<ErrorMessage?>.Publisher {get}
     var moviesPublisher: Published<Bool?>.Publisher {get}
     var isLoading: Bool {get set}
+    
     func viewDidLoad()
     func viewDidAppear()
-    
+    func isReachable() -> Bool
     func fetchMovies()
     func getMovie(index: Int) -> Movie
 }
@@ -29,8 +30,8 @@ class PlayingViewModel: PlayingViewModelProtocol {
     public  var dataSource: [Movie] = []
     public  var isLoading: Bool = false
     private var playingUseCase: GetPlayingMoviesUseCaseProtocol?
-    
-    
+    private let reachability = Reachability.shared
+  
     public init(useCase: GetPlayingMoviesUseCaseProtocol? = GetPlayingMoviesUseCase()) {
         self.playingUseCase = useCase
     }
@@ -64,6 +65,10 @@ class PlayingViewModel: PlayingViewModelProtocol {
                 self.isMovieFetched = true
             }
         })
+    }
+    
+    public func isReachable() -> Bool {
+        return reachability.isConnectedToNetwork()
     }
     
     public func getMovie(index: Int) -> Movie {

@@ -55,7 +55,6 @@ internal class BaseViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.tintColor = .label
-        
     }
     
     private func setupLoadingIndicatorView() {
@@ -100,6 +99,12 @@ internal class BaseViewController: UIViewController {
         let isEmpty = tableView.visibleCells.isEmpty
         emptyStateView.isHidden = !isEmpty
         tableView.separatorStyle = isEmpty ? .none : .singleLine
+    }
+    
+    public func alertView(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        self.present(alert, animated: true)
     }
 }
 

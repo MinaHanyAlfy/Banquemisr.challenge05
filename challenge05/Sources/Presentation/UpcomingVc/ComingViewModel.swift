@@ -12,9 +12,10 @@ protocol ComingViewModelProtocol {
     var errorPublisher: Published<ErrorMessage?>.Publisher {get}
     var moviesPublisher: Published<Bool?>.Publisher {get}
     var isLoading: Bool {get set}
+    
     func viewDidLoad()
     func viewDidAppear()
-    
+    func isReachable() -> Bool
     func fetchMovies()
     func getMovie(index: Int) -> Movie
 }
@@ -29,7 +30,7 @@ class ComingViewModel: ComingViewModelProtocol {
     public  var dataSource: [Movie] = []
     public  var isLoading: Bool = false
     private var comingUseCase: GetComingMoviesUseCaseProtocol?
-    
+    private let reachability = Reachability.shared
     
     public init(useCase: GetComingMoviesUseCaseProtocol? = GetComingMoviesUseCase()) {
         self.comingUseCase = useCase
@@ -64,6 +65,10 @@ class ComingViewModel: ComingViewModelProtocol {
                 self.isMovieFetched = true
             }
         })
+    }
+    
+    public func isReachable() -> Bool {
+        return reachability.isConnectedToNetwork()
     }
     
     public func getMovie(index: Int) -> Movie {

@@ -14,6 +14,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieOverviewTextView: UITextView!
     @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var genresLabel: UILabel!
     
     @IBOutlet weak var genreLabel: UILabel!
@@ -37,7 +38,9 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+        viewModel.viewDidLoad()
+        emptyView.isHidden = false
         bindData()
     }
     
@@ -59,6 +62,7 @@ class MovieDetailsViewController: UIViewController {
         releaseDateLabel.text = viewModel.getMovieReleaseDate()
         movieImageView.loadImageUsingCacheWithURLString(viewModel.getMovieImage(), placeHolder: UIImage(named: "placeholder"))
         genresLabel.text = viewModel.getMovieGenres()
+        emptyView.isHidden = true
     }
 }
 
@@ -70,6 +74,7 @@ extension MovieDetailsViewController {
             .sink(receiveValue: { [weak self] error in
                 if let error = error {
                     print("Error", error)
+                    self?.emptyView.isHidden = false
                 }
             })
             .store(in: &cancellabels)

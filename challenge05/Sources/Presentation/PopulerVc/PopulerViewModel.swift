@@ -15,7 +15,7 @@ protocol PopulerViewModelProtocol {
 
     func viewDidLoad()
     func viewDidAppear()
-    
+    func isReachable() -> Bool
     func fetchMovies()
     func getMovie(index: Int) -> Movie
 }
@@ -30,6 +30,7 @@ class PopulerViewModel: PopulerViewModelProtocol {
     public  var dataSource: [Movie] = []
     private var populerUseCase: GetPopulerMoviesUseCaseProtocol?
     public  var isLoading: Bool = false
+    private let reachability = Reachability.shared
 
     
     init(useCase: GetPopulerMoviesUseCaseProtocol? = GetPopulerMoviesUseCase()) {
@@ -65,6 +66,10 @@ class PopulerViewModel: PopulerViewModelProtocol {
                 self.isMovieFetched = true
             }
         })
+    }
+    
+    public func isReachable() -> Bool {
+        return reachability.isConnectedToNetwork()
     }
     
     public func getMovie(index: Int) -> Movie {

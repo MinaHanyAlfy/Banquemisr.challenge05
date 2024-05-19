@@ -46,9 +46,13 @@ extension PlayingViewController {
 //MARK: - UITableViewDelegate
 extension PlayingViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let movie = viewModel.getMovie(index: indexPath.row)
-        let vc = MovieDetailsViewController.ViewController(movieId: movie.id ?? 0)
-        navigationController?.pushViewController(vc, animated: true)
+        if viewModel.isReachable() {
+            let movie = viewModel.getMovie(index: indexPath.row)
+            let vc = MovieDetailsViewController.ViewController(movieId: movie.id ?? 0)
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            self.alertView(message: ErrorMessage.NoInternet.rawValue)
+        }
     }
 }
 
@@ -85,8 +89,10 @@ extension PlayingViewController {
         if scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
             if !viewModel.isLoading {
                 // Load more data
-                startLoading()
-                viewModel.fetchMovies()
+                if viewModel.isReachable() {
+                    startLoading()
+                    viewModel.fetchMovies()
+                }
             }
         }
     }
